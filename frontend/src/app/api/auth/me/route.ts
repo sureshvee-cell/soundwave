@@ -2,6 +2,8 @@ import { NextRequest } from "next/server";
 import prisma from "@/lib/db";
 import { ok, err, requireAuth, route } from "@/lib/api-helpers";
 
+export const dynamic = 'force-dynamic';
+
 export const GET = route(async (req: NextRequest) => {
   const authUser = await requireAuth(req);
   const user = await prisma.user.findUnique({

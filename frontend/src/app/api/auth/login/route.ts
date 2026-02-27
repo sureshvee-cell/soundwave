@@ -4,6 +4,8 @@ import { z }  from "zod";
 import prisma  from "@/lib/db";
 import { err, created, parseBody, signAccess, signRefresh, route } from "@/lib/api-helpers";
 
+export const dynamic = 'force-dynamic';
+
 export const POST = route(async (req: NextRequest) => {
   const { email, password } = await parseBody(req, z.object({
     email:    z.string().email(),

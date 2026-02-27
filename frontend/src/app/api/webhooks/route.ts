@@ -11,6 +11,8 @@ import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
 import prisma  from "@/lib/db";
 
+export const dynamic = 'force-dynamic';
+
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, { apiVersion: "2024-04-10" });
 
 export const POST = async (req: NextRequest) => {

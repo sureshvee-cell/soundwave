@@ -1,6 +1,8 @@
 import prisma from "@/lib/db";
 import { ok, route } from "@/lib/api-helpers";
 
+export const dynamic = 'force-dynamic';
+
 export const GET = route(async () => {
   const albums = await prisma.album.findMany({
     where:   { isPublished: true },

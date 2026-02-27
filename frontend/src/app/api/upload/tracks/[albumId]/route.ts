@@ -17,6 +17,8 @@ import { z }     from "zod";
 import prisma    from "@/lib/db";
 import { ok, err, parseBody, requireRole, route } from "@/lib/api-helpers";
 
+export const dynamic = 'force-dynamic';
+
 type Ctx = { params: { albumId: string } };
 
 export const POST = route(async (req: NextRequest, { params }: Ctx) => {

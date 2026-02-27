@@ -3,6 +3,8 @@ import { z } from "zod";
 import prisma  from "@/lib/db";
 import { ok, created, parseBody, requireAuth, route } from "@/lib/api-helpers";
 
+export const dynamic = 'force-dynamic';
+
 export const GET = route(async (req: NextRequest) => {
   const authUser = await requireAuth(req);
   const playlists = await prisma.playlist.findMany({

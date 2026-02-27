@@ -4,6 +4,8 @@ import { z }  from "zod";
 import prisma  from "@/lib/db";
 import { ok, created, err, parseBody, signAccess, signRefresh, route } from "@/lib/api-helpers";
 
+export const dynamic = 'force-dynamic';
+
 const schema = z.object({
   email:       z.string().email(),
   password:    z.string().min(8).max(100),

@@ -3,6 +3,8 @@ import { z } from "zod";
 import prisma from "@/lib/db";
 import { ok, err, parseBody, getAuthUser, requireRole, route } from "@/lib/api-helpers";
 
+export const dynamic = 'force-dynamic';
+
 type Ctx = { params: { id: string } };
 
 // GET /api/albums/[id]

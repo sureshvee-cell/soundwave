@@ -3,6 +3,8 @@ import { z } from "zod";
 import prisma  from "@/lib/db";
 import { ok, err, parseBody, signAccess, signRefresh, verifyRefresh, route } from "@/lib/api-helpers";
 
+export const dynamic = 'force-dynamic';
+
 export const POST = route(async (req: NextRequest) => {
   const { refreshToken } = await parseBody(req, z.object({ refreshToken: z.string() }));
 
