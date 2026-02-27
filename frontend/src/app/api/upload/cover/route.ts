@@ -33,5 +33,5 @@ export const POST = route(async (req: NextRequest) => {
   return ok({ url: blob.url, pathname: blob.pathname });
 });
 
-// Next.js App Router config — required for file uploads
-export const config = { api: { bodyParser: false } };
+// No special config needed in App Router; body parsing is handled by request.formData()
+// (previously exported as `config` in Pages API routes)
