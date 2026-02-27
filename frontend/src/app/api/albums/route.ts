@@ -3,6 +3,8 @@ import { z } from "zod";
 import prisma from "@/lib/db";
 import { ok, created, err, parseBody, getAuthUser, requireRole, parseSearchParams, route } from "@/lib/api-helpers";
 
+export const dynamic = 'force-dynamic';
+
 // GET /api/albums — paginated list with filters
 export const GET = route(async (req: NextRequest) => {
   const authUser = await getAuthUser(req);

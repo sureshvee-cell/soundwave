@@ -3,6 +3,8 @@ import { z } from "zod";
 import prisma from "@/lib/db";
 import { ok, err, parseSearchParams, route } from "@/lib/api-helpers";
 
+export const dynamic = 'force-dynamic';
+
 export const GET = route(async (req: NextRequest) => {
   const { q, limit } = parseSearchParams(req.nextUrl.searchParams, z.object({
     q:     z.string().min(1).max(100),
