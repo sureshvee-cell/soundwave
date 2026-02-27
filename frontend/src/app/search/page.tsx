@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { Suspense, useState, useEffect } from "react";
 import Image  from "next/image";
 import Link   from "next/link";
 import { useSearchParams } from "next/navigation";
@@ -20,7 +20,7 @@ const FILTER_TABS = [
 
 type Filter = (typeof FILTER_TABS)[number]["id"];
 
-export default function SearchPage() {
+function SearchContent() {
   const params = useSearchParams();
   const [query,  setQuery]  = useState(params.get("q") || "");
   const [filter, setFilter] = useState<Filter>("all");
@@ -166,5 +166,13 @@ export default function SearchPage() {
         </div>
       )}
     </div>
+  );
+}
+
+export default function SearchPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <SearchContent />
+    </Suspense>
   );
 }
