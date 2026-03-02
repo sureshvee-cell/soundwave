@@ -70,7 +70,7 @@ export default function ArtistPage({ params }: ArtistPageProps) {
       >
         {/* Banner Image with Gradient Overlay */}
         <Image
-          src={artist.bannerUrl}
+          src={artist.bannerUrl ?? `https://picsum.photos/seed/${artist.slug}/1400/400`}
           alt={artist.name}
           fill
           className="object-cover"
@@ -87,7 +87,7 @@ export default function ArtistPage({ params }: ArtistPageProps) {
         >
           <div className="relative w-32 h-32 md:w-48 md:h-48 rounded-full overflow-hidden shadow-2xl border-4 border-surface-base mb-6">
             <Image
-              src={artist.avatarUrl}
+              src={artist.avatarUrl ?? `https://picsum.photos/seed/${artist.slug}/400/400`}
               alt={artist.name}
               fill
               className="object-cover"
