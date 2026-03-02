@@ -151,7 +151,7 @@ export default function ArtistPage({ params }: ArtistPageProps) {
         <motion.div variants={itemVariants} className="flex flex-wrap justify-center gap-3">
           {artistTracks.length > 0 && (
             <button
-              onClick={() => play(artistTracks, 0)}
+              onClick={() => play(artistTracks[0], artistTracks)}
               className="btn-primary flex items-center gap-2"
             >
               <Play size={18} className="fill-current" />
