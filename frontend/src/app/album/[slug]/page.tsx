@@ -150,7 +150,7 @@ export default function AlbumPage({ params }: AlbumPageProps) {
                 className="flex flex-wrap gap-3 pt-4"
               >
                 <button
-                  onClick={() => play(album.tracks, 0)}
+                  onClick={() => album.tracks?.[0] && play(album.tracks[0], album.tracks)}
                   className="btn-primary flex items-center gap-2"
                 >
                   <Play size={18} className="fill-current" />
@@ -202,7 +202,7 @@ export default function AlbumPage({ params }: AlbumPageProps) {
       >
         <h2 className="text-2xl font-bold text-content-primary mb-6">Tracks</h2>
         <div className={cn('surface-raised rounded-lg p-6')}>
-          <TrackList tracks={album.tracks} showPlayCount={true} />
+          <TrackList tracks={album.tracks ?? []} showPlayCount={true} />
         </div>
       </motion.section>
 
