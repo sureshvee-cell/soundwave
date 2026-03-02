@@ -1,6 +1,5 @@
 'use client';
 
-import { use } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Heart, Play, UserPlus } from 'lucide-react';
@@ -11,11 +10,11 @@ import { TrackList } from '@/components/Track/TrackList';
 import { usePlayerStore } from '@/context/player-store';
 
 interface ArtistPageProps {
-  params: Promise<{ slug: string }>;
+  params: { slug: string };
 }
 
 export default function ArtistPage({ params }: ArtistPageProps) {
-  const { slug } = use(params);
+  const { slug } = params;
   const { play } = usePlayerStore();
 
   const artist = mockArtists.find((a) => a.slug === slug);

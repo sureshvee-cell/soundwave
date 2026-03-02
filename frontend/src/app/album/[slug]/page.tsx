@@ -1,6 +1,5 @@
 'use client';
 
-import { use } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Heart, Share2, Play } from 'lucide-react';
@@ -11,11 +10,11 @@ import { TrackList } from '@/components/Track/TrackList';
 import { usePlayerStore } from '@/context/player-store';
 
 interface AlbumPageProps {
-  params: Promise<{ slug: string }>;
+  params: { slug: string };
 }
 
 export default function AlbumPage({ params }: AlbumPageProps) {
-  const { slug } = use(params);
+  const { slug } = params;
   const { play } = usePlayerStore();
 
   const album = mockAlbums.find((a) => a.slug === slug);
