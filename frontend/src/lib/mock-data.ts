@@ -39,6 +39,15 @@ export const mockArtists: Artist[] = [
     monthlyListeners: 1_400_000, followerCount: 320_000,
     albums: [], popularTracks: [], createdAt: "2020-05-08",
   },
+  {
+    id: "a5", userId: "u5", name: "Sureshvee", slug: "sureshvee",
+    bio: "Independent artist crafting soulful Malayalam romantic ballads infused with Indian classical fusion and gentle acoustic textures.",
+    avatarUrl: "https://cdn2.suno.ai/image_large_2992d77f-12e7-4ed8-94e1-28c3f8d877ea.jpeg",
+    bannerUrl: "https://cdn2.suno.ai/image_large_2992d77f-12e7-4ed8-94e1-28c3f8d877ea.jpeg",
+    genres: ["Indian Classical Fusion", "Malayalam", "Ballad"], verified: true,
+    monthlyListeners: 52_000, followerCount: 12_500,
+    albums: [], popularTracks: [], createdAt: "2026-03-02",
+  },
 ];
 
 // ─── Tracks ───────────────────────────────────────────────────────────────────
@@ -52,6 +61,7 @@ export const mockTracks: Track[] = [
   { id: "t6", albumId: "al3", album: { id: "al3", title: "Neon Dreams", coverUrl: "https://picsum.photos/seed/neondreams/400/400" }, artistId: "a3", artist: { id: "a3", name: "Neon Citadel", slug: "neon-citadel" }, title: "Chrome Highway", slug: "chrome-highway", audioUrl: "/mock/audio.mp3", duration: 261, trackNumber: 1, discNumber: 1, genre: "Synth-pop", bpm: 118, isPremium: false, isExplicit: false, playCount: 3_400_000, likeCount: 210_000, createdAt: "2023-08-30" },
   { id: "t7", albumId: "al4", album: { id: "al4", title: "Still Waters", coverUrl: "https://picsum.photos/seed/stillwaters/400/400" }, artistId: "a4", artist: { id: "a4", name: "Iris Soleil", slug: "iris-soleil" }, title: "Morning Fog", slug: "morning-fog", audioUrl: "/mock/audio.mp3", duration: 189, trackNumber: 1, discNumber: 1, genre: "Folk", bpm: 74, isPremium: false, isExplicit: false, playCount: 7_100_000, likeCount: 540_000, isLiked: true, createdAt: "2022-11-15" },
   { id: "t8", albumId: "al4", album: { id: "al4", title: "Still Waters", coverUrl: "https://picsum.photos/seed/stillwaters/400/400" }, artistId: "a4", artist: { id: "a4", name: "Iris Soleil", slug: "iris-soleil" }, title: "River Bend", slug: "river-bend", audioUrl: "/mock/audio.mp3", duration: 232, trackNumber: 2, discNumber: 1, genre: "Folk", bpm: 80, isPremium: true, isExplicit: false, playCount: 4_500_000, likeCount: 290_000, createdAt: "2022-11-15" },
+  { id: "t9", albumId: "al7", album: { id: "al7", title: "Mazha Raavil", coverUrl: "https://cdn2.suno.ai/image_large_2992d77f-12e7-4ed8-94e1-28c3f8d877ea.jpeg" }, artistId: "a5", artist: { id: "a5", name: "Sureshvee", slug: "sureshvee" }, title: "Mazha Raavil", slug: "mazha-raavil", audioUrl: "https://cdn1.suno.ai/2992d77f-12e7-4ed8-94e1-28c3f8d877ea.mp3", duration: 123, trackNumber: 1, discNumber: 1, genre: "Indian Classical Fusion", bpm: 72, isPremium: false, isExplicit: false, playCount: 1_200, likeCount: 340, isLiked: true, createdAt: "2026-03-02" },
 ];
 
 // ─── Albums ───────────────────────────────────────────────────────────────────
@@ -63,6 +73,7 @@ export const mockAlbums: Album[] = [
   { id: "al4", artistId: "a4", artist: { id: "a4", name: "Iris Soleil", slug: "iris-soleil", verified: true }, title: "Still Waters", slug: "still-waters", coverUrl: "https://picsum.photos/seed/stillwaters/400/400", description: "Delicate folk songs that find beauty in quiet moments.", releaseDate: "2022-11-15", genres: ["Folk", "Jazz"], type: "album", isPremium: false, isPublished: true, totalDuration: 2980, trackCount: 11, playCount: 19_000_000, likeCount: 1_400_000, isLiked: true, tracks: mockTracks.filter(t => t.albumId === "al4"), createdAt: "2022-11-15" },
   { id: "al5", artistId: "a1", artist: { id: "a1", name: "Luna Waves", slug: "luna-waves", verified: true }, title: "Void Garden", slug: "void-garden", coverUrl: "https://picsum.photos/seed/voidgarden/400/400", description: "Luna Waves ventures deeper into experimental ambient territory.", releaseDate: "2024-01-20", genres: ["Ambient", "Experimental"], type: "album", isPremium: true, isPublished: true, totalDuration: 3600, trackCount: 9, playCount: 15_000_000, likeCount: 980_000, isLiked: false, tracks: [], createdAt: "2024-01-20" },
   { id: "al6", artistId: "a2", artist: { id: "a2", name: "The Midnight Shift", slug: "midnight-shift", verified: true }, title: "Overload (Single)", slug: "overload", coverUrl: "https://picsum.photos/seed/overload/400/400", releaseDate: "2024-02-14", genres: ["Indie Rock"], type: "single", isPremium: false, isPublished: true, totalDuration: 245, trackCount: 1, playCount: 5_200_000, likeCount: 380_000, isLiked: false, tracks: [], createdAt: "2024-02-14" },
+  { id: "al7", artistId: "a5", artist: { id: "a5", name: "Sureshvee", slug: "sureshvee", verified: true }, title: "Mazha Raavil", slug: "mazha-raavil", coverUrl: "https://cdn2.suno.ai/image_large_2992d77f-12e7-4ed8-94e1-28c3f8d877ea.jpeg", description: "A soft, dreamy Malayalam romantic ballad woven with acoustic guitar and Indian classical fusion — a love letter to rainy nights.", releaseDate: "2026-03-02", genres: ["Indian Classical Fusion", "Malayalam", "Ballad"], type: "single", isPremium: false, isPublished: true, totalDuration: 123, trackCount: 1, playCount: 1_200, likeCount: 340, isLiked: true, tracks: mockTracks.filter(t => t.albumId === "al7"), createdAt: "2026-03-02" },
 ];
 
 // ─── Genres ───────────────────────────────────────────────────────────────────
@@ -78,6 +89,7 @@ export const mockGenres: Genre[] = [
   { id: "g8",  name: "R&B",               slug: "rnb",               color: "#d946ef", imageUrl: "https://picsum.photos/seed/rnb/300/200" },
   { id: "g9",  name: "Classical",         slug: "classical",         color: "#84cc16", imageUrl: "https://picsum.photos/seed/classical/300/200" },
   { id: "g10", name: "Metal",             slug: "metal",             color: "#64748b", imageUrl: "https://picsum.photos/seed/metal/300/200" },
+  { id: "g11", name: "Malayalam",         slug: "malayalam",         color: "#f472b6", imageUrl: "https://cdn2.suno.ai/image_large_2992d77f-12e7-4ed8-94e1-28c3f8d877ea.jpeg" },
 ];
 
 // ─── Subscription Plans ────────────────────────────────────────────────────────
@@ -126,6 +138,7 @@ export const mockFeatured: FeaturedBanner[] = [
   { id: "f1", title: "Starfall", subtitle: "Luna Waves · New Album", imageUrl: "https://picsum.photos/seed/starfall/800/450", gradientFrom: "#7c3aed", gradientTo: "#06b6d4", link: "/album/starfall", cta: "Listen Now" },
   { id: "f2", title: "Voltage", subtitle: "The Midnight Shift · Latest Release", imageUrl: "https://picsum.photos/seed/voltage/800/450", gradientFrom: "#ec4899", gradientTo: "#f59e0b", link: "/album/voltage", cta: "Play Album" },
   { id: "f3", title: "Still Waters", subtitle: "Iris Soleil · Folk & Jazz", imageUrl: "https://picsum.photos/seed/stillwaters/800/450", gradientFrom: "#10b981", gradientTo: "#06b6d4", link: "/album/still-waters", cta: "Discover" },
+  { id: "f4", title: "Mazha Raavil", subtitle: "Sureshvee · Malayalam Romantic Ballad", imageUrl: "https://cdn2.suno.ai/image_large_2992d77f-12e7-4ed8-94e1-28c3f8d877ea.jpeg", gradientFrom: "#f472b6", gradientTo: "#7c3aed", link: "/album/mazha-raavil", cta: "Play Now" },
 ];
 
 // ─── Charts ───────────────────────────────────────────────────────────────────
